@@ -44,6 +44,3 @@ def sha256(string):
       print(hex(h))
       hashResult = hashResult+hex(h)
   return hashResult.replace('0x', '')
-
-
-print(sha256('abc'))
