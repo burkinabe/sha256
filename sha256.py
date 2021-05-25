@@ -13,17 +13,20 @@ def sha256(string):
   message = charToBit(string)
   print("Message original : "+string)
   print("Message en bit : "+message)
+  print("****************************************************************************\n")
 
   # 1. Preprocessing
   # ----------------
   # Pad message
   padded = padding(message)
   print("Message paddé : "+padded)
+  print("****************************************************************************\n")
 
   # Split up in to 512 bit message blocks
   blocks = split(padded, 512)
   print("Blocs de message : ")
   print(blocks)
+  print("****************************************************************************\n")
 
   # 2. Hash Computation
   # -------------------
@@ -31,6 +34,7 @@ def sha256(string):
   hash = IV
   print("Valeurs initiales : ")
   print(hash)
+  print("****************************************************************************\n")
   # For each message block
   for block in blocks:
     # Prepare 64 word message schedule
@@ -44,6 +48,7 @@ def sha256(string):
 
   print("Après compression : ")
   print(hash)
+  print("****************************************************************************\n")
   # 3. Result
   # ---------
   # Convert hash values to hexadecimal and concatenate
