@@ -54,5 +54,6 @@ def sha256(string):
   # Convert hash values to hexadecimal and concatenate
   hashResult = ""
   for h in hash:
-      hashResult = hashResult+hex(h)
+      hashResult = hashResult+str.format('0x{:08x}', int(hex(h), 16))
+      hashResult.lower()
   return hashResult.replace('0x', '')
